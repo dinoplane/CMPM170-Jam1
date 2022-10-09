@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{97b266ee-3e8a-4882-8fa2-1b49cc3c1687}">
+		<property name="name">
+			<value>DrumIsMute</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a418e0de-c7d0-05c9-280a-b529dc02e12e}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{44334d64-150e-456b-ab9c-11cc5fe4c483}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{44334d64-150e-456b-ab9c-11cc5fe4c483}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
