@@ -270,6 +270,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &298156211 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8485066249803632988, guid: 2860957e62fe6314ab381eb1ef04c122,
+    type: 3}
+  m_PrefabInstance: {fileID: 672089180}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &298156216
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298156211}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &351065589
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +352,19 @@ MonoBehaviour:
     m_ActionId: 86c442a4-9ceb-4623-ae01-4b987331ea28
     m_ActionName: OnFoot/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1664190978}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnCrouch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: a89decfe-53e5-4d56-9a29-fb7568698e2f
     m_ActionName: OnFoot/Crouch[/Keyboard/shift]
   - m_PersistentCalls:
@@ -350,7 +384,19 @@ MonoBehaviour:
     m_ActionId: 274a038b-b03a-4ec4-aa28-79d526513748
     m_ActionName: OnFoot/Look[/Mouse/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 672089181}
+        m_TargetAssemblyTypeName: PlayerHit, Assembly-CSharp
+        m_MethodName: OnSwing
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 537b117b-5193-4e84-8823-6ee08988b54a
     m_ActionName: OnFoot/Hit[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
@@ -498,7 +544,7 @@ MeshCollider:
   m_GameObject: {fileID: 599916901}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -593,7 +639,7 @@ PrefabInstance:
     - target: {fileID: 5260509555004324049, guid: 2860957e62fe6314ab381eb1ef04c122,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.83
       objectReference: {fileID: 0}
     - target: {fileID: 5260509555004324049, guid: 2860957e62fe6314ab381eb1ef04c122,
         type: 3}
@@ -637,6 +683,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2860957e62fe6314ab381eb1ef04c122, type: 3}
+--- !u!114 &672089181 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3352664794189469004, guid: 2860957e62fe6314ab381eb1ef04c122,
+    type: 3}
+  m_PrefabInstance: {fileID: 672089180}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3532c2eee95d1bc4d8f795fa466c62e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

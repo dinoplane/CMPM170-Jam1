@@ -7,13 +7,11 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     private Vector3 playerVelocity;
-    private bool isMoving = false;
-
     private float playerSpeed = 5.0f;
-    private float gravityValue = -9.81f;
-
     private CharacterController controller;
-    private bool isGrounded = false;
+
+    private bool isCrouching = false;
+    private float modifier = 1.0f;
 
     // Start is called before the first frame update
     void Awake()
@@ -29,7 +27,6 @@ public class PlayerMovement : MonoBehaviour
             case InputActionPhase.Started:
                 playerVelocity.x = curr_val.x;
                 playerVelocity.z = curr_val.y;
-                isMoving = true;
                 break;
             
             case InputActionPhase.Performed:
@@ -39,31 +36,46 @@ public class PlayerMovement : MonoBehaviour
             
             case InputActionPhase.Canceled:
                 playerVelocity = Vector3.zero;
-                isMoving = false;
                 break;
         }
     }
 
     public void OnCrouch(InputAction.CallbackContext context){
-
-        //Debug.Log($"Movement {context.phase} {context.ReadValue<Vector2>()}");
-        Vector2 curr_val = context.ReadValue<Vector2>();
+        Debug.Log("Muji");
         switch (context.phase){
             case InputActionPhase.Started:
-                playerVelocity.x = curr_val.x;
-                playerVelocity.z = curr_val.y;
-                isMoving = true;
+                if (!isCrouching){
+                    isCrouching = true;
+                    modifier = 0.5f;
+                    StartCoroutine(Crouch());
+                }
                 break;
             
             case InputActionPhase.Performed:
-                playerVelocity.x = curr_val.x;
-                playerVelocity.z = curr_val.y;
+
                 break;
             
             case InputActionPhase.Canceled:
-                playerVelocity = Vector3.zero;
-                isMoving = false;
+                if (isCrouching){
+                    isCrouching = false;
+                    modifier = 1.0f;
+                    StartCoroutine(Rise());    
+                }
                 break;
+        }
+    }
+
+    IEnumerator Crouch(){
+        for (int i = 0; i < 10; i++){
+            controller.Move(Vector3.down*0.5f);
+            yield return null;
+        }
+    }
+
+    IEnumerator Rise(){
+        for (int i = 0; i < 10; i++){
+            controller.Move(Vector3.up*0.5f);
+            yield return null;
         }
     }
 
@@ -72,13 +84,12 @@ public class PlayerMovement : MonoBehaviour
         Vector3 moveDirection = Vector3.zero;
         moveDirection.x = playerVelocity.x;
         moveDirection.z = playerVelocity.z; 
-        controller.Move(transform.TransformDirection(moveDirection) * playerSpeed * Time.deltaTime);
+        controller.Move(transform.TransformDirection(moveDirection) * playerSpeed * Time.deltaTime * modifier);
     }
 
     // Update is called once per frame
     void Update()
     {
-            isGrounded = controller.isGrounded;
             ProcessMove();
     }
 }

@@ -33,7 +33,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Hit",
+                    "name": "Swing",
                     "type": "Button",
                     "id": "537b117b-5193-4e84-8823-6ee08988b54a",
                     "expectedControlType": "Button",
@@ -72,7 +72,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Hit",
+                    "action": "Swing",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

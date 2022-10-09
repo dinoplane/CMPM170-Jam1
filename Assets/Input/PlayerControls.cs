@@ -55,7 +55,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Hit"",
+                    ""name"": ""Swing"",
                     ""type"": ""Button"",
                     ""id"": ""537b117b-5193-4e84-8823-6ee08988b54a"",
                     ""expectedControlType"": ""Button"",
@@ -94,7 +94,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Hit"",
+                    ""action"": ""Swing"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -163,7 +163,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_OnFoot_Movement = m_OnFoot.FindAction("Movement", throwIfNotFound: true);
         m_OnFoot_Crouch = m_OnFoot.FindAction("Crouch", throwIfNotFound: true);
         m_OnFoot_Look = m_OnFoot.FindAction("Look", throwIfNotFound: true);
-        m_OnFoot_Hit = m_OnFoot.FindAction("Hit", throwIfNotFound: true);
+        m_OnFoot_Swing = m_OnFoot.FindAction("Swing", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -226,7 +226,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_OnFoot_Movement;
     private readonly InputAction m_OnFoot_Crouch;
     private readonly InputAction m_OnFoot_Look;
-    private readonly InputAction m_OnFoot_Hit;
+    private readonly InputAction m_OnFoot_Swing;
     public struct OnFootActions
     {
         private @PlayerControls m_Wrapper;
@@ -234,7 +234,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_OnFoot_Movement;
         public InputAction @Crouch => m_Wrapper.m_OnFoot_Crouch;
         public InputAction @Look => m_Wrapper.m_OnFoot_Look;
-        public InputAction @Hit => m_Wrapper.m_OnFoot_Hit;
+        public InputAction @Swing => m_Wrapper.m_OnFoot_Swing;
         public InputActionMap Get() { return m_Wrapper.m_OnFoot; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -253,9 +253,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Look.started -= m_Wrapper.m_OnFootActionsCallbackInterface.OnLook;
                 @Look.performed -= m_Wrapper.m_OnFootActionsCallbackInterface.OnLook;
                 @Look.canceled -= m_Wrapper.m_OnFootActionsCallbackInterface.OnLook;
-                @Hit.started -= m_Wrapper.m_OnFootActionsCallbackInterface.OnHit;
-                @Hit.performed -= m_Wrapper.m_OnFootActionsCallbackInterface.OnHit;
-                @Hit.canceled -= m_Wrapper.m_OnFootActionsCallbackInterface.OnHit;
+                @Swing.started -= m_Wrapper.m_OnFootActionsCallbackInterface.OnSwing;
+                @Swing.performed -= m_Wrapper.m_OnFootActionsCallbackInterface.OnSwing;
+                @Swing.canceled -= m_Wrapper.m_OnFootActionsCallbackInterface.OnSwing;
             }
             m_Wrapper.m_OnFootActionsCallbackInterface = instance;
             if (instance != null)
@@ -269,9 +269,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
-                @Hit.started += instance.OnHit;
-                @Hit.performed += instance.OnHit;
-                @Hit.canceled += instance.OnHit;
+                @Swing.started += instance.OnSwing;
+                @Swing.performed += instance.OnSwing;
+                @Swing.canceled += instance.OnSwing;
             }
         }
     }
@@ -281,6 +281,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
-        void OnHit(InputAction.CallbackContext context);
+        void OnSwing(InputAction.CallbackContext context);
     }
 }

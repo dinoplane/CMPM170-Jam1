@@ -14,6 +14,8 @@ public class PlayerLook : MonoBehaviour
     public float xSensitivity = 30f;
     public float ySensitivity = 30f;
 
+    private GameObject joint;
+
     public void OnLook(InputAction.CallbackContext context){
         switch (context.phase){
             case InputActionPhase.Started:
@@ -34,6 +36,8 @@ public class PlayerLook : MonoBehaviour
 
         //apply to camera
         cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+        //joint.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+
         // rotate player
         transform.Rotate(Vector3.up * (mouseInput.x * Time.deltaTime) * xSensitivity);
     }
@@ -42,6 +46,7 @@ public class PlayerLook : MonoBehaviour
     void Start()
     {
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        joint = GameObject.Find("Joint");
     }
 
     // Update is called once per frame
