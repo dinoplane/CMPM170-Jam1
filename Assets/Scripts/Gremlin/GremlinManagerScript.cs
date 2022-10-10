@@ -12,10 +12,12 @@ public class GremlinManagerScript : MonoBehaviour
     //RER varies based on number of gremlins spawned
     //every time we add a gremlin, check if we have reached max, if so start climax
     public GameObject GremlinPrefab;
+    /*
     void Start()
     {
         
     }
+    */
 
     // Update is called once per frame
     void Update()
@@ -33,16 +35,24 @@ public class GremlinManagerScript : MonoBehaviour
         //spawn at coordinates of spawnpoint, sending Gremlin it's index in spawnpoint array
         //maybe spawn puff of smoke on spawn point
         //check if RER changes
+        if(Input.GetKeyDown(KeyCode.Space)){
+            Vector3 randomSpawnPosition = new Vector3(Random.Range(-10, 11), 0, Random.Range(-10, 11));
+            Instantiate(GremlinPrefab, randomSpawnPosition, Quaternion.identity);
+        }
     }
 
+    /*
     void UpdateRER()
     {
         //check how many gremlins exist
         //Set RER accordingly
     }
+    */
 
+    /*
     void UpdateList()
     {
 
     }
+    */
 }

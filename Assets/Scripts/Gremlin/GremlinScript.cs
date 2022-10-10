@@ -10,7 +10,7 @@ public class GremlinScript : MonoBehaviour
     public int mySpawnNum;
     void Start()
     {
-        Hobgoblin = this.transform.parent.gameObject;
+        //Hobgoblin = this.transform.parent.gameObject;
     }
 
     // Update is called once per frame
