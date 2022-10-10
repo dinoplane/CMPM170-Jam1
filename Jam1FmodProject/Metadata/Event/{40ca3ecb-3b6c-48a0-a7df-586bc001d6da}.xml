@@ -209,6 +209,9 @@
 		<property name="highCut">
 			<value>2300</value>
 		</property>
+		<property name="wetLevel">
+			<value>-11.5</value>
+		</property>
 	</object>
 	<object class="MixerBusFader" id="{7454f67e-8828-48f6-8553-6e5338d6a79e}" />
 	<object class="SpatialiserEffect" id="{3861528c-42c3-4776-8493-5159d27cbb79}" />

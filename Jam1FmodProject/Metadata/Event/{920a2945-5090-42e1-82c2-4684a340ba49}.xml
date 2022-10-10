@@ -181,10 +181,10 @@
 	</object>
 	<object class="ChorusEffect" id="{17989cdc-e9df-445a-b7b6-f62d2b240fad}">
 		<property name="depth">
-			<value>5.5</value>
+			<value>5</value>
 		</property>
 		<property name="mix">
-			<value>29.5</value>
+			<value>13</value>
 		</property>
 	</object>
 	<object class="SFXReverbEffect" id="{2492896b-3ed0-4f8a-bf29-5ffa4daa4fab}">
@@ -207,7 +207,7 @@
 			<value>3100</value>
 		</property>
 		<property name="wetLevel">
-			<value>-10.5</value>
+			<value>-13</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{a68772d5-70f8-4741-b70e-78c8d1769b8c}" />
