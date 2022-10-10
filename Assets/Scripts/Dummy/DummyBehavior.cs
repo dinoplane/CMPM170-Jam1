@@ -13,7 +13,6 @@ public class DummyBehavior : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("Hallo");
         Destroy(gameObject);
     }
 
