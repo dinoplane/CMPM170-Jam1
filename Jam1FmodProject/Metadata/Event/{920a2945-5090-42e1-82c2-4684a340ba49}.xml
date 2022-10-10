@@ -156,6 +156,8 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{6a339c88-6804-45a8-b0e1-c9583a7200ee}">
 		<relationship name="effects">
+			<destination>{17989cdc-e9df-445a-b7b6-f62d2b240fad}</destination>
+			<destination>{2492896b-3ed0-4f8a-bf29-5ffa4daa4fab}</destination>
 			<destination>{a68772d5-70f8-4741-b70e-78c8d1769b8c}</destination>
 			<destination>{b0a3efd1-2d8f-4ea4-8040-7bb25123a1ad}</destination>
 		</relationship>
@@ -176,6 +178,37 @@
 			<destination>{eafa2197-6d7a-41bc-b79e-026483ab9843}</destination>
 			<destination>{e4350436-d848-4baf-8e0d-9c3a6c0260d2}</destination>
 		</relationship>
+	</object>
+	<object class="ChorusEffect" id="{17989cdc-e9df-445a-b7b6-f62d2b240fad}">
+		<property name="depth">
+			<value>5.5</value>
+		</property>
+		<property name="mix">
+			<value>29.5</value>
+		</property>
+	</object>
+	<object class="SFXReverbEffect" id="{2492896b-3ed0-4f8a-bf29-5ffa4daa4fab}">
+		<property name="decayTime">
+			<value>3800</value>
+		</property>
+		<property name="earlyDelay">
+			<value>86</value>
+		</property>
+		<property name="lateDelay">
+			<value>74</value>
+		</property>
+		<property name="HFReference">
+			<value>20000</value>
+		</property>
+		<property name="HFDecayRatio">
+			<value>66.5</value>
+		</property>
+		<property name="highCut">
+			<value>3100</value>
+		</property>
+		<property name="wetLevel">
+			<value>-10.5</value>
+		</property>
 	</object>
 	<object class="MixerBusFader" id="{a68772d5-70f8-4741-b70e-78c8d1769b8c}" />
 	<object class="SpatialiserEffect" id="{b0a3efd1-2d8f-4ea4-8040-7bb25123a1ad}" />

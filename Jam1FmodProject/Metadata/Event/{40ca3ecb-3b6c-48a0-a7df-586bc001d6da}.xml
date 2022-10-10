@@ -156,6 +156,7 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{0efd03ac-027b-4ba1-b3f0-160fcf97b91b}">
 		<relationship name="effects">
+			<destination>{5c884fcf-416f-4798-a96f-05653bf15636}</destination>
 			<destination>{7454f67e-8828-48f6-8553-6e5338d6a79e}</destination>
 			<destination>{3861528c-42c3-4776-8493-5159d27cbb79}</destination>
 		</relationship>
@@ -173,14 +174,46 @@
 			<destination>{7a2e7904-7075-4370-9159-2be5a1cc282a}</destination>
 		</relationship>
 		<relationship name="automationPoints">
-			<destination>{a6bd97f8-2c19-4591-b4a0-120d9c8afb81}</destination>
-			<destination>{fa599689-fd6a-4353-ba19-29e6931977ff}</destination>
+			<destination>{fa3e7c1c-ea7c-4d86-8f0c-8e605572d839}</destination>
+			<destination>{c71fb354-e0b4-4709-8f76-e9d88cd0e47e}</destination>
 		</relationship>
+	</object>
+	<object class="SFXReverbEffect" id="{5c884fcf-416f-4798-a96f-05653bf15636}">
+		<property name="decayTime">
+			<value>2200</value>
+		</property>
+		<property name="earlyDelay">
+			<value>11.5</value>
+		</property>
+		<property name="lateDelay">
+			<value>23.5</value>
+		</property>
+		<property name="HFReference">
+			<value>20000</value>
+		</property>
+		<property name="HFDecayRatio">
+			<value>88</value>
+		</property>
+		<property name="diffusion">
+			<value>91.5</value>
+		</property>
+		<property name="density">
+			<value>84</value>
+		</property>
+		<property name="lowShelfFrequency">
+			<value>350</value>
+		</property>
+		<property name="lowShelfGain">
+			<value>-12.5</value>
+		</property>
+		<property name="highCut">
+			<value>2300</value>
+		</property>
 	</object>
 	<object class="MixerBusFader" id="{7454f67e-8828-48f6-8553-6e5338d6a79e}" />
 	<object class="SpatialiserEffect" id="{3861528c-42c3-4776-8493-5159d27cbb79}" />
 	<object class="MixerBusFader" id="{44ad77d0-7120-4aeb-a2e3-02f7831e7af6}" />
-	<object class="AutomationPoint" id="{a6bd97f8-2c19-4591-b4a0-120d9c8afb81}">
+	<object class="AutomationPoint" id="{fa3e7c1c-ea7c-4d86-8f0c-8e605572d839}">
 		<property name="position">
 			<value>1</value>
 		</property>
@@ -188,7 +221,7 @@
 			<value>0</value>
 		</property>
 	</object>
-	<object class="AutomationPoint" id="{fa599689-fd6a-4353-ba19-29e6931977ff}">
+	<object class="AutomationPoint" id="{c71fb354-e0b4-4709-8f76-e9d88cd0e47e}">
 		<property name="position">
 			<value>0</value>
 		</property>

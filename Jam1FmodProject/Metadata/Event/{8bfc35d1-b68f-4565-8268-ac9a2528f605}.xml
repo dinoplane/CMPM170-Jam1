@@ -156,6 +156,9 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{15b95f89-2111-4830-8d9a-e3de25ac93bd}">
 		<relationship name="effects">
+			<destination>{22fc46b1-49d6-4b28-ad6d-8b866ea5afeb}</destination>
+			<destination>{951db86e-8f4a-4c13-81d8-faaee6d482d6}</destination>
+			<destination>{5915927c-325c-4519-8d17-842e395b8ecb}</destination>
 			<destination>{25e0f556-9f9d-44d3-b6f5-2ae4f73f8c0d}</destination>
 			<destination>{4171519e-1aa7-4e2f-8e1d-73dcac62c75c}</destination>
 		</relationship>
@@ -176,6 +179,39 @@
 			<destination>{00be8eaf-68c2-4a80-a99e-97f7bc70dd60}</destination>
 			<destination>{63e412cd-5516-47ca-9be4-2f11316933b5}</destination>
 		</relationship>
+	</object>
+	<object class="ChorusEffect" id="{22fc46b1-49d6-4b28-ad6d-8b866ea5afeb}">
+		<property name="rate">
+			<value>0.74000001</value>
+		</property>
+		<property name="depth">
+			<value>7</value>
+		</property>
+		<property name="mix">
+			<value>77</value>
+		</property>
+	</object>
+	<object class="DelayEffect" id="{951db86e-8f4a-4c13-81d8-faaee6d482d6}">
+		<property name="delay">
+			<value>72</value>
+		</property>
+		<property name="feedback">
+			<value>14</value>
+		</property>
+		<property name="level">
+			<value>-35</value>
+		</property>
+	</object>
+	<object class="SFXReverbEffect" id="{5915927c-325c-4519-8d17-842e395b8ecb}">
+		<property name="decayTime">
+			<value>15500</value>
+		</property>
+		<property name="HFDecayRatio">
+			<value>87</value>
+		</property>
+		<property name="wetLevel">
+			<value>-14</value>
+		</property>
 	</object>
 	<object class="MixerBusFader" id="{25e0f556-9f9d-44d3-b6f5-2ae4f73f8c0d}" />
 	<object class="SpatialiserEffect" id="{4171519e-1aa7-4e2f-8e1d-73dcac62c75c}" />
