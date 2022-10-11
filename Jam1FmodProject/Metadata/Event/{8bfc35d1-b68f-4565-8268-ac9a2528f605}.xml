@@ -185,7 +185,7 @@
 			<value>0.74000001</value>
 		</property>
 		<property name="depth">
-			<value>2</value>
+			<value>6.5</value>
 		</property>
 		<property name="mix">
 			<value>31.5</value>
@@ -199,7 +199,7 @@
 			<value>14</value>
 		</property>
 		<property name="level">
-			<value>-35</value>
+			<value>-16</value>
 		</property>
 	</object>
 	<object class="SFXReverbEffect" id="{5915927c-325c-4519-8d17-842e395b8ecb}">
