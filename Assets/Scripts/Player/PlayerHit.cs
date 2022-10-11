@@ -24,7 +24,6 @@ public class PlayerHit : MonoBehaviour
 
         switch (context.phase){
             case InputActionPhase.Started:
-                Debug.Log("Rotateo");
                 if (!isSwinging){
                     StartCoroutine(Swing());
                 }
