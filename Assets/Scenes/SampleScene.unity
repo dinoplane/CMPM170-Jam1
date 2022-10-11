@@ -361,7 +361,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &236023090
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -857,6 +857,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1120547582}
     m_Modifications:
+    - target: {fileID: 1457361490698389782, guid: 4ab1c7704b1f66e4abc427898db7da95,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1457361490698389782, guid: 4ab1c7704b1f66e4abc427898db7da95,
         type: 3}
       propertyPath: m_IsTrigger
@@ -1693,7 +1698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &884574624
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2792,6 +2797,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1457361490698389782, guid: 4ab1c7704b1f66e4abc427898db7da95,
         type: 3}
+      propertyPath: m_Radius
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457361490698389782, guid: 4ab1c7704b1f66e4abc427898db7da95,
+        type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
@@ -3068,8 +3078,6 @@ MonoBehaviour:
   - {fileID: 2003142619}
   - {fileID: 266867400}
   - {fileID: 991770897}
-  - {fileID: 236023089}
-  - {fileID: 884574623}
   freeSpawns: 
 --- !u!4 &1944789441
 Transform:
@@ -3201,7 +3209,7 @@ PrefabInstance:
     - target: {fileID: 1457361490698389782, guid: 4ab1c7704b1f66e4abc427898db7da95,
         type: 3}
       propertyPath: m_Radius
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1457361490698389782, guid: 4ab1c7704b1f66e4abc427898db7da95,
         type: 3}
