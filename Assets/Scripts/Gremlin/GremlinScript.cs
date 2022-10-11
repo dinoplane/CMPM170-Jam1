@@ -10,6 +10,7 @@ public class GremlinScript : MonoBehaviour
     public int mySpawnNum;
     void Start()
     {
+        // Hobgoblin manages the gremlins
         Hobgoblin = GameObject.Find("GremlinManager");
     }
 
@@ -19,22 +20,12 @@ public class GremlinScript : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision collisionInfo)
-    {
-        //if (collisionInfo.gameObject.tag == "Swatter")
-        //{
-            Hobgoblin.GetComponent<GremlinManagerScript>().RemoveGobby(mySpawnNum);
-            Destroy(this.gameObject);
-            //GremlinManagerScript set its Spawnpoint[mySpawnNum]=false
-            //GremlinManagerScript adjust RER
-            //Maybe do puff of smoke
-            //destroy this obj
-        //}
-    }
+    // Collision Detection
     void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Swatter")
         {
+            // If swatter hits Gremlin, remove/destroy that gremlin
             Hobgoblin.GetComponent<GremlinManagerScript>().RemoveGobby(mySpawnNum);
             Destroy(this.gameObject);
         }
@@ -43,8 +34,4 @@ public class GremlinScript : MonoBehaviour
     {
         mySpawnNum = x;
     }
-    /*public void setHobgoblin(GameObject hob)
-    {
-        Hobgoblin = hob;
-    }*/
 }

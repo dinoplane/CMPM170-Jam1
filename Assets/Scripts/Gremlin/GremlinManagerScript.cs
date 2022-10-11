@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class GremlinManagerScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    //Array or list of Spawnpoints
-    //Binary Array noting if a spawnpoint is taken 
-    //Timer
+    
     public float RER = 3.0f; //Random Encounter Rate
     public float elapsedTime;
     //RER varies based on number of gremlins spawned
@@ -15,18 +12,16 @@ public class GremlinManagerScript : MonoBehaviour
     public GameObject GremlinPrefab;
     public GameObject[] Spawnpoints;
     public List<int> freeSpawns = new List<int>();
-    //public int  = true;
-    //*
+    
     void Start()
     {
-        //filledSpawns = new bool[Spawnpoints.Length];
+        // get number of spawnpoints
         for(int x = 0; x<Spawnpoints.Length; x++)
         {
             freeSpawns.Add(x);
         }
         elapsedTime = 0;
     }
-    //*/
 
     // Update is called once per frame
     void Update()
@@ -35,50 +30,49 @@ public class GremlinManagerScript : MonoBehaviour
         elapsedTime += Time.deltaTime;
         if (elapsedTime >= RER)
         {
+            // Spawn Gremlin
             Spawn();
+            // reset timer
             elapsedTime = 0;
         }
-        //reset timer.
+        
 
+    }
+
+    void IncrementRER()
+    {
+        RER += 1;
+    }
+
+    void DecrementRER()
+    {
+        RER -= 1;
     }
 
     void Spawn()
     {
-        //create new instance of gremlin
-        //put a gremlin in a spawnpoint by an instrument w/o gremlins
-        //spawn at coordinates of spawnpoint, sending Gremlin it's index in spawnpoint array
-        //maybe spawn puff of smoke on spawn point
-        //check if RER changes
+        // If no spawns left, no more spawn
         if (freeSpawns.Count == 0)
         {
             return;
         }
+
+        // Get random location of spawnpoint to place gremlin
         int loc = Random.Range(1, freeSpawns.Count)-1;
-        Vector3 spawnPos= Spawnpoints[freeSpawns[loc]].transform.position;
+        Vector3 spawnPos= Spawnpoints[freeSpawns[loc]].transform.position; // get position in 3D coordinates of spawnpoint object
         
-        GameObject babyGremlin = Instantiate(GremlinPrefab, spawnPos, Quaternion.identity); //, Quaternion.identity);
-        /*if (Input.GetKeyDown(KeyCode.Space)){
-            Vector3 randomSpawnPosition = new Vector3(Random.Range(-10, 11), 0, Random.Range(-10, 11));
-            Instantiate(GremlinPrefab, randomSpawnPosition, Quaternion.identity);
-        }*/
+        GameObject babyGremlin = Instantiate(GremlinPrefab, spawnPos, Quaternion.identity); // Create gremlin instance and place it
         babyGremlin.GetComponent<GremlinScript>().setSpawnNum(freeSpawns[loc]);
-        babyGremlin.transform.Rotate(-90, 0, 0);
+        babyGremlin.transform.Rotate(-90, 0, 0); // rotate gremlin so it is standing
         freeSpawns.RemoveAt(loc);
-        RER += 1;
+        IncrementRER(); // update encoutner rate of gremlin
     }
+        
 
-    /*
-    void UpdateRER()
-    {
-        //check how many gremlins exist
-        //Set RER accordingly
-    }
-    */
-
-    
+    // Remove gremlin once git with the swatter
     public void RemoveGobby(int num)
     {
         freeSpawns.Add(num);
-        RER -= 1;
+        DecrementRER();
     }
 }
