@@ -19,7 +19,7 @@ public class MusicSourceBehavior : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {   
-        Debug.Log("Beep");
+        //Debug.Log("Beep");
         if (collision.gameObject.tag == "Gremlin")
         {   
             currGremlin = collision.gameObject;
@@ -54,7 +54,7 @@ public class MusicSourceBehavior : MonoBehaviour
         else if (finale.musicCount == 5)
         {
             isSpawned = false;
-            gameObject.GetComponent<FMODUnity.StudioEventEmitter>().SetParameter("IsGremlinAlive", 0);
+            gameObject.GetComponent<FMODUnity.StudioEventEmitter>().SetParameter("IsGremlinAlive", -1);
             // input invincible gremlin logic here;
         }
     }

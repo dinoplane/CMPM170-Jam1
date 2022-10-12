@@ -12,7 +12,7 @@ public class FinaleManagerScript : MonoBehaviour
     public GameObject flySwatter = null;
     public GameObject musicBox = null;
     public GameOverScript GameOver;
-
+    public GameObject conductor;
     
 
     // Start is called before the first frame update
@@ -30,6 +30,7 @@ public class FinaleManagerScript : MonoBehaviour
             Instantiate(musicBox, transform.position, Quaternion.identity);
             trigger = true;
             flySwatter.GetComponent<BoxCollider>().enabled = false;
+            conductor.transform.position = new Vector3(-0.37f, 1.4f, -7.66f);
             GameOver.Setup();
         }
     }
