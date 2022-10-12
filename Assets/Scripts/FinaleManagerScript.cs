@@ -14,6 +14,21 @@ public class FinaleManagerScript : MonoBehaviour
     public GameOverScript GameOver;
     public GameObject conductor;
     
+    IEnumerator GameOverSequence()
+    {
+        Instantiate(musicBox, transform.position, Quaternion.identity);
+        trigger = true;
+        flySwatter.GetComponent<BoxCollider>().enabled = false;
+        conductor.SetActive(true);
+        conductor.transform.position = new Vector3(-0.37f, 1.4f, -7.66f);
+        yield return StartCoroutine(GameOverCoroutine());
+        GameOver.Setup();
+    }
+
+    IEnumerator GameOverCoroutine()
+    {
+        yield return new WaitForSeconds(8.5f);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +42,8 @@ public class FinaleManagerScript : MonoBehaviour
         //musicCount = musicSourceScript.musicCount;
         if (trigger == false && musicCount == 5)
         {
-            Instantiate(musicBox, transform.position, Quaternion.identity);
             trigger = true;
-            flySwatter.GetComponent<BoxCollider>().enabled = false;
-            conductor.transform.position = new Vector3(-0.37f, 1.4f, -7.66f);
-            GameOver.Setup();
+            StartCoroutine(GameOverSequence());
         }
     }
 }
