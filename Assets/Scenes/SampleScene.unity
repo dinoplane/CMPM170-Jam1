@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.5993736, g: 0.5997497, b: 0.59948695, a: 1}
+  m_IndirectSpecularColor: {r: 0.59937525, g: 0.5997512, b: 0.59948856, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -540,6 +540,53 @@ Transform:
   m_Father: {fileID: 1944789441}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1 &271984593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 271984595}
+  - component: {fileID: 271984594}
+  m_Layer: 0
+  m_Name: FinaleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &271984594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271984593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac4be70c9a6d955418f06e1b586aced0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicCount: 0
+  musicBox: {fileID: 3725058058804372958, guid: 3271b9db8bef57a4bb5718dac8120d6d,
+    type: 3}
+--- !u!4 &271984595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271984593}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.42189, y: 2.7042506, z: 2.5869207}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &298156211 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8485066249803632988, guid: 2860957e62fe6314ab381eb1ef04c122,
@@ -761,6 +808,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6027916729127703669, guid: 4ab1c7704b1f66e4abc427898db7da95,
+        type: 3}
+      propertyPath: finale
+      value: 
+      objectReference: {fileID: 271984594}
     - target: {fileID: 9034077250006621308, guid: 4ab1c7704b1f66e4abc427898db7da95,
         type: 3}
       propertyPath: m_RootOrder
@@ -1800,6 +1852,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6027916729127703669, guid: 4ab1c7704b1f66e4abc427898db7da95,
+        type: 3}
+      propertyPath: finale
+      value: 
+      objectReference: {fileID: 271984594}
     - target: {fileID: 7425394669567195745, guid: 4ab1c7704b1f66e4abc427898db7da95,
         type: 3}
       propertyPath: m_IsKinematic
@@ -2188,6 +2245,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6027916729127703669, guid: 4ab1c7704b1f66e4abc427898db7da95,
+        type: 3}
+      propertyPath: finale
+      value: 
+      objectReference: {fileID: 271984594}
+    - target: {fileID: 6027916729127703669, guid: 4ab1c7704b1f66e4abc427898db7da95,
+        type: 3}
+      propertyPath: musicBox
+      value: 
+      objectReference: {fileID: 3725058058804372958, guid: 3271b9db8bef57a4bb5718dac8120d6d,
+        type: 3}
     - target: {fileID: 9034077250006621308, guid: 4ab1c7704b1f66e4abc427898db7da95,
         type: 3}
       propertyPath: m_RootOrder

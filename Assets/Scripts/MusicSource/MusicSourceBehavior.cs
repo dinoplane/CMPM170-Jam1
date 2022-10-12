@@ -6,10 +6,15 @@ public class MusicSourceBehavior : MonoBehaviour
 {
     private GameObject currGremlin;
     private bool isSpawned = false;
+
+    // public GameObject musicBox = null;
+    // public static short musicCount = 0;
+    public FinaleManagerScript finale;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        // musicBox = GameObject.Find("FinalSong");
     }
 
     void OnTriggerEnter(Collider collision)
@@ -20,6 +25,10 @@ public class MusicSourceBehavior : MonoBehaviour
             currGremlin = collision.gameObject;
             isSpawned = true;
             gameObject.GetComponent<FMODUnity.StudioEventEmitter>().SetParameter("IsGremlinAlive", 1);
+            // musicBox = GameObject.Find("FinalSong");
+            // musicBox.SetActive(true);
+            // Instantiate(musicBox, transform.position, Quaternion.identity);
+            finale.musicCount++;
         }
     }
 
@@ -37,10 +46,16 @@ public class MusicSourceBehavior : MonoBehaviour
     void Update()
     {   
         // Check if gremlin is destroyed
-        if (isSpawned && currGremlin == null)   {
+        if (isSpawned && currGremlin == null && finale.musicCount < 3)   {
            gameObject.GetComponent<FMODUnity.StudioEventEmitter>().SetParameter("IsGremlinAlive", 0);
             isSpawned = false;
+            finale.musicCount--;
         }
-     
+        else if (finale.musicCount == 3)
+        {
+            isSpawned = false;
+            gameObject.GetComponent<FMODUnity.StudioEventEmitter>().SetParameter("IsGremlinAlive", 0);
+            // input invincible gremlin logic here;
+        }
     }
 }
