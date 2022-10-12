@@ -937,7 +937,7 @@ MonoBehaviour:
   flySwatter: {fileID: 298156211}
   musicBox: {fileID: 3725058058804372958, guid: 3271b9db8bef57a4bb5718dac8120d6d,
     type: 3}
-  GameOver: {fileID: 0}
+  GameOver: {fileID: 1971047745}
 --- !u!4 &271984595
 Transform:
   m_ObjectHideFlags: 0
@@ -1235,7 +1235,7 @@ PrefabInstance:
     - target: {fileID: 2934994636831625686, guid: 4ab1c7704b1f66e4abc427898db7da95,
         type: 3}
       propertyPath: Params.Array.data[0].Value
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5170343708466170191, guid: 4ab1c7704b1f66e4abc427898db7da95,
         type: 3}
@@ -2861,7 +2861,7 @@ PrefabInstance:
     - target: {fileID: 2934994636831625686, guid: 4ab1c7704b1f66e4abc427898db7da95,
         type: 3}
       propertyPath: Params.Array.data[0].Value
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5170343708466170191, guid: 4ab1c7704b1f66e4abc427898db7da95,
         type: 3}
@@ -3026,7 +3026,7 @@ PrefabInstance:
     - target: {fileID: 2934994636831625686, guid: 4ab1c7704b1f66e4abc427898db7da95,
         type: 3}
       propertyPath: Params.Array.data[0].Value
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5170343708466170191, guid: 4ab1c7704b1f66e4abc427898db7da95,
         type: 3}
@@ -5024,7 +5024,7 @@ PrefabInstance:
     - target: {fileID: 2934994636831625686, guid: 4ab1c7704b1f66e4abc427898db7da95,
         type: 3}
       propertyPath: Params.Array.data[0].Value
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5170343708466170191, guid: 4ab1c7704b1f66e4abc427898db7da95,
         type: 3}
@@ -5745,7 +5745,7 @@ PrefabInstance:
     - target: {fileID: 2934994636831625686, guid: 4ab1c7704b1f66e4abc427898db7da95,
         type: 3}
       propertyPath: Params.Array.data[0].Value
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5170343708466170191, guid: 4ab1c7704b1f66e4abc427898db7da95,
         type: 3}
