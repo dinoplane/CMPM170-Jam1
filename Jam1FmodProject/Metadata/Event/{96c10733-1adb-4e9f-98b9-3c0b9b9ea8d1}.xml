@@ -5,7 +5,7 @@
 			<value>GremlinDeath</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{10626052-c98b-4665-b391-646f2512cecd}</destination>
@@ -96,13 +96,16 @@
 	<object class="MixerBusPanner" id="{6b00b318-b5c2-425b-860a-a294140fcd19}" />
 	<object class="MixerBusEffectChain" id="{375b0390-90af-42c1-8c4e-fe732a336250}">
 		<relationship name="effects">
+			<destination>{e36ec06f-ccb9-4a42-b48d-03be89b73a23}</destination>
 			<destination>{ad3b5b4b-3d9d-4da7-a142-ad95f5316844}</destination>
+			<destination>{b88e3c54-d94a-4e14-bc2a-5991f97b37b8}</destination>
 			<destination>{172122c4-ea53-4177-8379-610613c8e0a5}</destination>
 			<destination>{8d3ba94f-437e-4d3e-9fa2-a3d9433c2cc0}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{fa27a2f2-4368-4e5d-ac9a-5ec470dbc09a}" />
 	<object class="MixerBusFader" id="{ec23aebc-8a13-4dec-a6de-e3be751d4489}" />
+	<object class="ChorusEffect" id="{e36ec06f-ccb9-4a42-b48d-03be89b73a23}" />
 	<object class="PitchShifterEffect" id="{ad3b5b4b-3d9d-4da7-a142-ad95f5316844}">
 		<property name="pitch">
 			<value>1.38</value>
@@ -117,6 +120,7 @@
 			<value>13.1000004</value>
 		</property>
 	</object>
+	<object class="SpatialiserEffect" id="{b88e3c54-d94a-4e14-bc2a-5991f97b37b8}" />
 	<object class="SFXReverbEffect" id="{172122c4-ea53-4177-8379-610613c8e0a5}">
 		<property name="decayTime">
 			<value>2300</value>

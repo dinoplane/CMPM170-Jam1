@@ -127,7 +127,7 @@ MonoBehaviour:
   Preload: 0
   Params:
   - Name: isGremlinAlive
-    Value: 0
+    Value: -1
   OverrideAttenuation: 1
   OverrideMinDistance: 1
   OverrideMaxDistance: 9
@@ -143,3 +143,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff6a23e011e8fd24bb40a8edbf2ee26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finale: {fileID: 0}

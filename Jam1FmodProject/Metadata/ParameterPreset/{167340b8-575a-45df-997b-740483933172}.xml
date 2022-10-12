@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="ParameterPreset" id="{e71aa699-0a4f-4f62-9c82-24c2108f2be4}">
+	<object class="ParameterPreset" id="{167340b8-575a-45df-997b-740483933172}">
 		<property name="name">
-			<value>isGremlinAlive</value>
+			<value>Instrument</value>
 		</property>
 		<relationship name="folder">
 			<destination>{a418e0de-c7d0-05c9-280a-b529dc02e12e}</destination>
 		</relationship>
 		<relationship name="parameter">
-			<destination>{7a2e7904-7075-4370-9159-2be5a1cc282a}</destination>
+			<destination>{e51378b4-11d5-4675-94fb-f386e8e3077f}</destination>
 		</relationship>
 	</object>
-	<object class="GameParameter" id="{7a2e7904-7075-4370-9159-2be5a1cc282a}">
+	<object class="GameParameter" id="{e51378b4-11d5-4675-94fb-f386e8e3077f}">
 		<property name="parameterType">
-			<value>1</value>
-		</property>
-		<property name="minimum">
-			<value>-1</value>
+			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>2</value>
+			<value>5</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Drums</value>
+			<value>Guitar</value>
+			<value>Horns</value>
+			<value>Piano</value>
+			<value>Strings</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>
