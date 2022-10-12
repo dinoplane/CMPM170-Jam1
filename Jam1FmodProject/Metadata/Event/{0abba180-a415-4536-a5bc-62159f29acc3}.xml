@@ -90,10 +90,40 @@
 	<object class="MixerBusPanner" id="{b222a1fd-bd3f-4e1e-ace0-a8f3618a3384}" />
 	<object class="MixerBusEffectChain" id="{06633635-0018-43ba-94c2-d80850a49703}">
 		<relationship name="effects">
+			<destination>{b9e96c03-2505-492f-a78b-c8e26cfd19b8}</destination>
+			<destination>{9c75c6c0-9ab1-4602-bff8-1f7c9937f752}</destination>
+			<destination>{1f8696b3-51fa-4c13-a1dc-da403d09e98a}</destination>
 			<destination>{9befec7a-2193-4408-bb0b-621320f5104d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{a29c8529-b2c5-4e4c-b7ec-a70d14e29b0c}" />
 	<object class="MixerBusFader" id="{09ab5e94-e8bf-4608-98ba-dc128aa2a5b0}" />
+	<object class="DelayEffect" id="{b9e96c03-2505-492f-a78b-c8e26cfd19b8}">
+		<property name="delay">
+			<value>62</value>
+		</property>
+		<property name="feedback">
+			<value>0</value>
+		</property>
+		<property name="level">
+			<value>-21</value>
+		</property>
+	</object>
+	<object class="SFXReverbEffect" id="{9c75c6c0-9ab1-4602-bff8-1f7c9937f752}">
+		<property name="wetLevel">
+			<value>-13</value>
+		</property>
+	</object>
+	<object class="FlangerEffect" id="{1f8696b3-51fa-4c13-a1dc-da403d09e98a}">
+		<property name="rate">
+			<value>0.379999995</value>
+		</property>
+		<property name="delay">
+			<value>0.0420000032</value>
+		</property>
+		<property name="mix">
+			<value>18</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{9befec7a-2193-4408-bb0b-621320f5104d}" />
 </objects>
