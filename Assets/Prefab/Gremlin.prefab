@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7964680816592217382}
   - component: {fileID: 8229036450370579171}
   - component: {fileID: 8867144588094526097}
+  - component: {fileID: 9026137633572138997}
   m_Layer: 0
   m_Name: Gremlin
   m_TagString: Gremlin
@@ -132,3 +133,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!95 &9026137633572138997
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3535769257195391293}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6840a23f7dbc95b459b70ffba58a7489, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
