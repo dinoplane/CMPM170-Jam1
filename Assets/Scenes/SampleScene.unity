@@ -679,7 +679,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &298156211 stripped
 GameObject:
@@ -2129,6 +2129,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6027916729127703669, guid: 4ab1c7704b1f66e4abc427898db7da95,
+        type: 3}
+      propertyPath: finale
+      value: 
+      objectReference: {fileID: 271984594}
     - target: {fileID: 7425394669567195745, guid: 4ab1c7704b1f66e4abc427898db7da95,
         type: 3}
       propertyPath: m_IsKinematic
@@ -2289,6 +2294,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6027916729127703669, guid: 4ab1c7704b1f66e4abc427898db7da95,
+        type: 3}
+      propertyPath: finale
+      value: 
+      objectReference: {fileID: 271984594}
     - target: {fileID: 7425394669567195745, guid: 4ab1c7704b1f66e4abc427898db7da95,
         type: 3}
       propertyPath: m_IsKinematic

@@ -46,12 +46,12 @@ public class MusicSourceBehavior : MonoBehaviour
     void Update()
     {   
         // Check if gremlin is destroyed
-        if (isSpawned && currGremlin == null && finale.musicCount < 3)   {
+        if (isSpawned && currGremlin == null && finale.musicCount < 5)   {
            gameObject.GetComponent<FMODUnity.StudioEventEmitter>().SetParameter("IsGremlinAlive", 0);
             isSpawned = false;
             finale.musicCount--;
         }
-        else if (finale.musicCount == 3)
+        else if (finale.musicCount == 5)
         {
             isSpawned = false;
             gameObject.GetComponent<FMODUnity.StudioEventEmitter>().SetParameter("IsGremlinAlive", 0);
