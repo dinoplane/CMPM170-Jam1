@@ -23,7 +23,7 @@ public class FinaleManagerScript : MonoBehaviour
     void Update()
     {
         //musicCount = musicSourceScript.musicCount;
-        if (trigger == false && musicCount == 5)
+        if (trigger == false && musicCount == 3)
         {
             Instantiate(musicBox, transform.position, Quaternion.identity);
             trigger = true;
