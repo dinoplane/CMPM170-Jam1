@@ -11,7 +11,6 @@ public class FinaleManagerScript : MonoBehaviour
     //public MusicSourceBehavior musicSourceScript;
     public GameObject flySwatter = null;
     public GameObject musicBox = null;
-    public GameOverScript GameOver;
 
     
 
@@ -30,7 +29,6 @@ public class FinaleManagerScript : MonoBehaviour
             Instantiate(musicBox, transform.position, Quaternion.identity);
             trigger = true;
             flySwatter.GetComponent<BoxCollider>().enabled = false;
-            GameOver.Setup();
         }
     }
 }
