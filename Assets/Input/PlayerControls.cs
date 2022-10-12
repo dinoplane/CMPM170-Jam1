@@ -37,6 +37,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""Crouch"",
+                    ""type"": ""Button"",
+                    ""id"": ""a89decfe-53e5-4d56-9a29-fb7568698e2f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Look"",
                     ""type"": ""Value"",
                     ""id"": ""274a038b-b03a-4ec4-aa28-79d526513748"",
@@ -56,6 +65,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 }
             ],
             ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""bfc360fc-62a1-4bc1-a874-f014c78d36ae"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
                 {
                     ""name"": """",
                     ""id"": ""d6fda239-8388-4820-b5e7-92c2b33ace4f"",
@@ -141,6 +161,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         // OnFoot
         m_OnFoot = asset.FindActionMap("OnFoot", throwIfNotFound: true);
         m_OnFoot_Movement = m_OnFoot.FindAction("Movement", throwIfNotFound: true);
+        m_OnFoot_Crouch = m_OnFoot.FindAction("Crouch", throwIfNotFound: true);
         m_OnFoot_Look = m_OnFoot.FindAction("Look", throwIfNotFound: true);
         m_OnFoot_Swing = m_OnFoot.FindAction("Swing", throwIfNotFound: true);
     }
@@ -203,6 +224,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_OnFoot;
     private IOnFootActions m_OnFootActionsCallbackInterface;
     private readonly InputAction m_OnFoot_Movement;
+    private readonly InputAction m_OnFoot_Crouch;
     private readonly InputAction m_OnFoot_Look;
     private readonly InputAction m_OnFoot_Swing;
     public struct OnFootActions
@@ -210,6 +232,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         private @PlayerControls m_Wrapper;
         public OnFootActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_OnFoot_Movement;
+        public InputAction @Crouch => m_Wrapper.m_OnFoot_Crouch;
         public InputAction @Look => m_Wrapper.m_OnFoot_Look;
         public InputAction @Swing => m_Wrapper.m_OnFoot_Swing;
         public InputActionMap Get() { return m_Wrapper.m_OnFoot; }
@@ -224,6 +247,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Movement.started -= m_Wrapper.m_OnFootActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_OnFootActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_OnFootActionsCallbackInterface.OnMovement;
+                @Crouch.started -= m_Wrapper.m_OnFootActionsCallbackInterface.OnCrouch;
+                @Crouch.performed -= m_Wrapper.m_OnFootActionsCallbackInterface.OnCrouch;
+                @Crouch.canceled -= m_Wrapper.m_OnFootActionsCallbackInterface.OnCrouch;
                 @Look.started -= m_Wrapper.m_OnFootActionsCallbackInterface.OnLook;
                 @Look.performed -= m_Wrapper.m_OnFootActionsCallbackInterface.OnLook;
                 @Look.canceled -= m_Wrapper.m_OnFootActionsCallbackInterface.OnLook;
@@ -237,6 +263,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
+                @Crouch.started += instance.OnCrouch;
+                @Crouch.performed += instance.OnCrouch;
+                @Crouch.canceled += instance.OnCrouch;
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
@@ -250,6 +279,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     public interface IOnFootActions
     {
         void OnMovement(InputAction.CallbackContext context);
+        void OnCrouch(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnSwing(InputAction.CallbackContext context);
     }

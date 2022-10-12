@@ -19,6 +19,7 @@ public class MusicSourceBehavior : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {   
+        Debug.Log("Beep");
         if (collision.gameObject.tag == "Gremlin")
         {   
             currGremlin = collision.gameObject;

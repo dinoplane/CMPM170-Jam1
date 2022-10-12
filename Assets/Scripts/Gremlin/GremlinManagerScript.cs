@@ -12,9 +12,8 @@ public class GremlinManagerScript : MonoBehaviour
     //every time we add a gremlin, check if we have reached max, if so start climax
     public GameObject GremlinPrefab;
     public GameObject[] Spawnpoints;
-    public ScoreManager scoremng;
     public List<int> freeSpawns = new List<int>();
-
+    
     void Start()
     {
         // get number of spawnpoints
@@ -50,7 +49,6 @@ public class GremlinManagerScript : MonoBehaviour
             RER += 2;
         }
         RER += 1;
-        elapsedTime = 0;
     }
 
     void DecrementRER()
@@ -60,7 +58,6 @@ public class GremlinManagerScript : MonoBehaviour
             RER = 2;
         }
         RER -= 1;
-        elapsedTime = 0;
     }
 
     void Spawn()
@@ -89,6 +86,6 @@ public class GremlinManagerScript : MonoBehaviour
     {
         freeSpawns.Add(num);
         DecrementRER();
-        scoremng.IncrementScore();
+        
     }
 }
