@@ -13,6 +13,7 @@ public class GremlinManagerScript : MonoBehaviour
     public GameObject GremlinPrefab;
     public GameObject[] Spawnpoints;
     public List<int> freeSpawns = new List<int>();
+    public ScoreManager scoremng;
     
     void Start()
     {
@@ -86,6 +87,6 @@ public class GremlinManagerScript : MonoBehaviour
     {
         freeSpawns.Add(num);
         DecrementRER();
-        
+        scoremng.IncrementScore();
     }
 }

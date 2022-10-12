@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     private float playerSpeed = 5.0f;
     private CharacterController controller;
 
-    private bool isCrouching = false;
     private float modifier = 1.0f;
 
     // Start is called before the first frame update
@@ -37,45 +36,6 @@ public class PlayerMovement : MonoBehaviour
             case InputActionPhase.Canceled:
                 playerVelocity = Vector3.zero;
                 break;
-        }
-    }
-
-    public void OnCrouch(InputAction.CallbackContext context){
-        Debug.Log("Muji");
-        switch (context.phase){
-            case InputActionPhase.Started:
-                if (!isCrouching){
-                    isCrouching = true;
-                    modifier = 0.5f;
-                    StartCoroutine(Crouch());
-                }
-                break;
-            
-            case InputActionPhase.Performed:
-
-                break;
-            
-            case InputActionPhase.Canceled:
-                if (isCrouching){
-                    isCrouching = false;
-                    modifier = 1.0f;
-                    StartCoroutine(Rise());    
-                }
-                break;
-        }
-    }
-
-    IEnumerator Crouch(){
-        for (int i = 0; i < 10; i++){
-            controller.Move(Vector3.down*0.5f);
-            yield return null;
-        }
-    }
-
-    IEnumerator Rise(){
-        for (int i = 0; i < 10; i++){
-            controller.Move(Vector3.up*0.5f);
-            yield return null;
         }
     }
 
