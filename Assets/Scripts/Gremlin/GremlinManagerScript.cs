@@ -50,6 +50,7 @@ public class GremlinManagerScript : MonoBehaviour
             RER += 2;
         }
         RER += 1;
+        elapsedTime = 0;
     }
 
     void DecrementRER()
@@ -59,6 +60,7 @@ public class GremlinManagerScript : MonoBehaviour
             RER = 2;
         }
         RER -= 1;
+        elapsedTime = 0;
     }
 
     void Spawn()
