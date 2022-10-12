@@ -664,6 +664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicCount: 0
+  flySwatter: {fileID: 298156211}
   musicBox: {fileID: 3725058058804372958, guid: 3271b9db8bef57a4bb5718dac8120d6d,
     type: 3}
 --- !u!4 &271984595
@@ -1465,7 +1466,7 @@ PrefabInstance:
     - target: {fileID: 5260509555004324049, guid: 2860957e62fe6314ab381eb1ef04c122,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5260509555004324049, guid: 2860957e62fe6314ab381eb1ef04c122,
         type: 3}
@@ -2050,7 +2051,7 @@ Transform:
   - {fileID: 1222345154}
   - {fileID: 1256847876}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1222345153
 PrefabInstance:
