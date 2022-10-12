@@ -7,7 +7,6 @@ public class GremlinManagerScript : MonoBehaviour
     
     public float RER = 3.0f; //Random Encounter Rate
     public float elapsedTime;
-    public float totalTime;
     //RER varies based on number of gremlins spawned
     //every time we add a gremlin, check if we have reached max, if so start climax
     public GameObject GremlinPrefab;
@@ -22,7 +21,6 @@ public class GremlinManagerScript : MonoBehaviour
             freeSpawns.Add(x);
         }
         elapsedTime = 0;
-        totalTime = 0;
     }
 
     // Update is called once per frame
@@ -30,7 +28,6 @@ public class GremlinManagerScript : MonoBehaviour
     {
         //increment timer, if timer==RER
         elapsedTime += Time.deltaTime;
-        totalTime += Time.deltaTime;
         if (elapsedTime >= RER)
         {
             // Spawn Gremlin
@@ -44,19 +41,11 @@ public class GremlinManagerScript : MonoBehaviour
 
     void IncrementRER()
     {
-        if (freeSpawns.Count == Spawnpoints.Length-1)
-        {
-            RER += 2;
-        }
         RER += 1;
     }
 
     void DecrementRER()
     {
-        if (freeSpawns.Count == Spawnpoints.Length)
-        {
-            RER = 2;
-        }
         RER -= 1;
     }
 
@@ -70,8 +59,7 @@ public class GremlinManagerScript : MonoBehaviour
 
         // Get random location of spawnpoint to place gremlin
         int loc = Random.Range(1, freeSpawns.Count)-1;
-        //int loc2 = Random.Range(1, Spawnpoints[loc].Length) - 1;
-        Vector3 spawnPos= Spawnpoints[freeSpawns[loc]]/*[loc2]*/.transform.position; // get position in 3D coordinates of spawnpoint object
+        Vector3 spawnPos= Spawnpoints[freeSpawns[loc]].transform.position; // get position in 3D coordinates of spawnpoint object
         
         GameObject babyGremlin = Instantiate(GremlinPrefab, spawnPos, Quaternion.identity); // Create gremlin instance and place it
         babyGremlin.GetComponent<GremlinScript>().setSpawnNum(freeSpawns[loc]);
@@ -86,6 +74,5 @@ public class GremlinManagerScript : MonoBehaviour
     {
         freeSpawns.Add(num);
         DecrementRER();
-        
     }
 }
