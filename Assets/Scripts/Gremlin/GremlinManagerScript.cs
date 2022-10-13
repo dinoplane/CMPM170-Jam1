@@ -49,7 +49,7 @@ public class GremlinManagerScript : MonoBehaviour
         {
             RER += 2;
         }
-        RER += 1;
+        RER += 1.0f;
         elapsedTime = 0;
     }
 
@@ -72,14 +72,29 @@ public class GremlinManagerScript : MonoBehaviour
         }
 
         // Get random location of spawnpoint to place gremlin
-        int loc = Random.Range(1, freeSpawns.Count)-1;
-        //int loc2 = Random.Range(1, Spawnpoints[loc].Length) - 1;
-        Vector3 spawnPos= Spawnpoints[freeSpawns[loc]]/*[loc2]*/.transform.position; // get position in 3D coordinates of spawnpoint object
-        
-        GameObject babyGremlin = Instantiate(GremlinPrefab, spawnPos, Quaternion.identity); // Create gremlin instance and place it
+        int loc = Random.Range(0, freeSpawns.Count); // Random Range is exclusive for ints
+        int loc2 = Random.Range(0, Spawnpoints[freeSpawns[loc]].transform.childCount);
+        // for (int i = 0; i < 10; i++){
+        //     Debug.Log(Random.Range(0, Spawnpoints[loc].transform.childCount-1));
+        // }
+        string ret = "Spawn Loc: " + loc.ToString();
+        //ret += "\nSpawn Point child count: "+ Spawnpoints[loc].transform.childCount.ToString();
+        ret += "\nSpawn Point point: "+ loc2.ToString();
+        // // ret += "\nCurr FreeSpawn: ";
+        // // for (int i = 0; i < freeSpawns.Count; i++){
+        // //     ret += freeSpawns[i].ToString();
+        // // }
+        Debug.Log(ret);
+
+
+        Transform selectedZone = Spawnpoints[freeSpawns[loc]].transform.GetChild(loc2);
+
+        GameObject babyGremlin = Instantiate(GremlinPrefab, selectedZone.position, selectedZone.rotation); // Create gremlin instance and place it
         babyGremlin.GetComponent<GremlinScript>().setSpawnNum(freeSpawns[loc]);
-        babyGremlin.transform.Rotate(-90, 0, 0); // rotate gremlin so it is standing
+        //babyGremlin.transform.Rotate(-90, 0, 0); // rotate gremlin so it is standing
         freeSpawns.RemoveAt(loc);
+
+
         IncrementRER(); // update encoutner rate of gremlin
     }
         
