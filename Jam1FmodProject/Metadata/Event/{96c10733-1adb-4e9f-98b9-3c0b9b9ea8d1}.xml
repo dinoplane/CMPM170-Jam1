@@ -111,7 +111,7 @@
 	<object class="ChorusEffect" id="{e36ec06f-ccb9-4a42-b48d-03be89b73a23}" />
 	<object class="PitchShifterEffect" id="{ad3b5b4b-3d9d-4da7-a142-ad95f5316844}">
 		<property name="pitch">
-			<value>1.38</value>
+			<value>1.58999991</value>
 		</property>
 		<property name="fftSize">
 			<value>2640</value>
@@ -122,6 +122,9 @@
 		<property name="maxChannels">
 			<value>13.1000004</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{326533f8-af12-4616-8bcc-d84e695f37a8}</destination>
+		</relationship>
 	</object>
 	<object class="SpatialiserEffect" id="{b88e3c54-d94a-4e14-bc2a-5991f97b37b8}" />
 	<object class="SFXReverbEffect" id="{172122c4-ea53-4177-8379-610613c8e0a5}">
@@ -136,4 +139,12 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{8d3ba94f-437e-4d3e-9fa2-a3d9433c2cc0}" />
+	<object class="RandomizerModulator" id="{326533f8-af12-4616-8bcc-d84e695f37a8}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>56.5</value>
+		</property>
+	</object>
 </objects>
