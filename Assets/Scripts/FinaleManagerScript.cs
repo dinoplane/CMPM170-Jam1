@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FinaleManagerScript : MonoBehaviour
 {
-    private bool trigger = false;
+    public bool trigger = false;
     public short musicCount = 0;
 
     //public GameObject musicSource;
@@ -21,8 +21,11 @@ public class FinaleManagerScript : MonoBehaviour
         flySwatter.GetComponent<BoxCollider>().enabled = false;
         conductor.SetActive(true);
         conductor.transform.position = new Vector3(-0.37f, 1.4f, -7.66f);
+        
         yield return StartCoroutine(GameOverCoroutine());
         GameOver.Setup();
+        UnityEngine.Cursor.visible = true;
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
     }
 
     IEnumerator GameOverCoroutine()
@@ -34,6 +37,8 @@ public class FinaleManagerScript : MonoBehaviour
     void Start()
     {
         //musicSourceScript = musicSource.GetComponent<MusicSourceBehavior>();
+        UnityEngine.Cursor.lockState = CursorLockMode.Confined;
+        UnityEngine.Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -45,5 +50,6 @@ public class FinaleManagerScript : MonoBehaviour
             trigger = true;
             StartCoroutine(GameOverSequence());
         }
+        
     }
 }

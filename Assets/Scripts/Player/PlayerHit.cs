@@ -9,6 +9,7 @@ public class PlayerHit : MonoBehaviour
 {
     private GameObject joint;
     private GameObject swatter;
+    private FinaleManagerScript fn;
 
     private bool isSwinging = false;
 
@@ -17,7 +18,7 @@ public class PlayerHit : MonoBehaviour
     {
         joint = GameObject.Find("Joint");
         swatter = GameObject.Find("Swatter");
-        
+        fn = GameObject.Find("FinaleManager").GetComponent<FinaleManagerScript>();
     }
 
     public void OnSwing(InputAction.CallbackContext context){
@@ -27,7 +28,10 @@ public class PlayerHit : MonoBehaviour
                 if (!isSwinging){
                     StartCoroutine(Swing());
                 }
-                    
+                if (UnityEngine.Cursor.visible && !fn.trigger){
+                    UnityEngine.Cursor.lockState = CursorLockMode.Confined;
+                    UnityEngine.Cursor.visible = false;
+                }
                 break;
             
             case InputActionPhase.Performed:
