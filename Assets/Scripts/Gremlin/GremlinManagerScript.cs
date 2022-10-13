@@ -14,6 +14,7 @@ public class GremlinManagerScript : MonoBehaviour
     public GameObject[] Spawnpoints;
     public List<int> freeSpawns = new List<int>();
     public ScoreManager scoremng;
+    public bool hardmode = false;
     
     void Start()
     {
@@ -39,7 +40,11 @@ public class GremlinManagerScript : MonoBehaviour
             // reset timer
             elapsedTime = 0;
         }
-        
+        if(totalTime >= 30f && totalTime <= 31f && !hardmode)
+        {
+            RER--;
+            hardmode = true;
+        }
 
     }
 
@@ -47,7 +52,7 @@ public class GremlinManagerScript : MonoBehaviour
     {
         if (freeSpawns.Count == Spawnpoints.Length-1)
         {
-            RER += 2;
+            RER += 1;
         }
         RER += 1.0f;
         elapsedTime = 0;
@@ -57,9 +62,13 @@ public class GremlinManagerScript : MonoBehaviour
     {
         if (freeSpawns.Count == Spawnpoints.Length)
         {
-            RER = 2;
+            RER -= 1;
         }
-        RER -= 1;
+        RER -= 1.05f;
+        if(RER<0.5)
+        {
+            RER = .5f;
+        }
         elapsedTime = 0;
     }
 
