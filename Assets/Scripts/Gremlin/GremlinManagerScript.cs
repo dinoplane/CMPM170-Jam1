@@ -5,7 +5,7 @@ using UnityEngine;
 public class GremlinManagerScript : MonoBehaviour
 {
     
-    public float RER = 3.0f; //Random Encounter Rate
+    public float RER = 2.0f; //Random Encounter Rate
     public float elapsedTime;
     public float totalTime;
     //RER varies based on number of gremlins spawned
@@ -52,9 +52,9 @@ public class GremlinManagerScript : MonoBehaviour
     {
         if (freeSpawns.Count == Spawnpoints.Length-1)
         {
-            RER += 1;
+            RER += 0.2f;
         }
-        RER += 1.0f;
+        RER += 0.2f;
         elapsedTime = 0;
     }
 
@@ -62,9 +62,9 @@ public class GremlinManagerScript : MonoBehaviour
     {
         if (freeSpawns.Count == Spawnpoints.Length)
         {
-            RER -= 1;
+            RER -= 0.2f;
         }
-        RER -= 1.05f;
+        RER -= 0.25f;
         if(RER<0.5)
         {
             RER = .5f;
@@ -81,6 +81,7 @@ public class GremlinManagerScript : MonoBehaviour
         }
 
         // Get random location of spawnpoint to place gremlin
+        Random.InitState(System.DateTime.Now.Millisecond);
         int loc = Random.Range(0, freeSpawns.Count); // Random Range is exclusive for ints
         int loc2 = Random.Range(0, Spawnpoints[freeSpawns[loc]].transform.childCount);
         // for (int i = 0; i < 10; i++){

@@ -29,7 +29,7 @@ public class PlayerHit : MonoBehaviour
                     StartCoroutine(Swing());
                 }
                 if (UnityEngine.Cursor.visible && !fn.trigger){
-                    UnityEngine.Cursor.lockState = CursorLockMode.Confined;
+                    UnityEngine.Cursor.lockState = CursorLockMode.Locked;
                     UnityEngine.Cursor.visible = false;
                 }
                 break;
@@ -46,14 +46,14 @@ public class PlayerHit : MonoBehaviour
 
     IEnumerator Swing(){
         isSwinging = true;
-        for (int i = 0; i < 100; i++){
-            joint.transform.Rotate(new Vector3(1, 0, 0));
+        for (int i = 0; i < 20; i++){
+            joint.transform.Rotate(new Vector3(5, 0, 0));
             yield return null;
         }
         yield return new WaitForSeconds(0.1f);
 
-        for (int i = 0; i < 100; i++){
-            joint.transform.Rotate(new Vector3(-1, 0, 0));
+        for (int i = 0; i < 20; i++){
+            joint.transform.Rotate(new Vector3(-5, 0, 0));
             yield return null;
         }   
         isSwinging = false;

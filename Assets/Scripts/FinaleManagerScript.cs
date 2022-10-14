@@ -37,7 +37,7 @@ public class FinaleManagerScript : MonoBehaviour
     void Start()
     {
         //musicSourceScript = musicSource.GetComponent<MusicSourceBehavior>();
-        UnityEngine.Cursor.lockState = CursorLockMode.Confined;
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         UnityEngine.Cursor.visible = false;
     }
 

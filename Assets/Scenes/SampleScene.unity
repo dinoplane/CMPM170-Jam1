@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.59937465, g: 0.5997507, b: 0.59948814, a: 1}
+  m_IndirectSpecularColor: {r: 0.7805085, g: 0.78051883, b: 0.780494, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -287,7 +287,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 42554899}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 3.534, y: 0.263, z: -2.441}
+  m_LocalPosition: {x: 3.587, y: 0.263, z: -2.481}
   m_LocalScale: {x: 0.1, y: 0.10000001, z: 0.10000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -885,6 +885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4be70c9a6d955418f06e1b586aced0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trigger: 0
   musicCount: 0
   flySwatter: {fileID: 298156211}
   musicBox: {fileID: 3725058058804372958, guid: 3271b9db8bef57a4bb5718dac8120d6d,
@@ -1988,7 +1989,7 @@ PrefabInstance:
     - target: {fileID: 5260509555004324049, guid: 2860957e62fe6314ab381eb1ef04c122,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.83
+      value: 1.005
       objectReference: {fileID: 0}
     - target: {fileID: 5260509555004324049, guid: 2860957e62fe6314ab381eb1ef04c122,
         type: 3}
@@ -10428,7 +10429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713276e710531d143996aed04674a799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RER: 3
+  RER: 2
   elapsedTime: 0
   totalTime: 0
   GremlinPrefab: {fileID: 3535769257195391293, guid: 0a1dd14e1fda0894589cf7ea425b4e5c,
